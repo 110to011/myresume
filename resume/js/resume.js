@@ -114,6 +114,12 @@ window.onload = function() {
   });
   play();
   //---end---
+  function changeCouleur(){
+    var corps = document.getElementsByClassName("corps");
+    corps[0].style.fill = '#ffc0cb';
+    corps[1].style.fill = 'rgb(249,205,173)';
+  }
+  changeCouleur();
 }
 //绘制网状时间线
 var u = document.createElement("canvas"),
