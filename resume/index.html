@@ -3,13 +3,172 @@
   <head>
     <meta charset="utf-8">
     <title>my-resume</title>
-    <link rel="stylesheet" href="./static/css/reset.css">
-    <link rel="stylesheet" href="./static/css/style.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
-    <div id="app"></div>
-   <script type="text/javascript" src="./static/js/jquery-1.11.2.min.js"></script>
-  <script type="text/javascript" src="./static/js/pageswitch.js"></script>
-  <script type="text/javascript" src="./static/js/canvas-nest.js"></script>
+    <div id="container" data-PageSwitch>
+      <div class="sections">
+        <div class="section" id="section0">
+          <h1 class="title milky">基本信息</h1>
+          <section class="content st-panel active">
+            <div class="portrait">
+              <a href="javascript:;">
+                <div class="spiner"></div>
+                <img src="http://7te96d.com1.z0.glb.clouddn.com/me.jpg" alt="王晓婷" title="Xiaoting Wang" class="pic">
+                <h3>王晓婷</h3>
+              </a>
+            </div>
+            <section class="demo" id="sec"></section>
+            <script id="entry-template" type="text/x-handlebars-template">
+              <ul class="menu unstyled">
+              {{#list infoArr}}{{ask}}: {{res}}{{/list}}
+              </ul>
+            </script>  
+          </section>
+        </div>
+        <div class="section" id="section1">
+          <div class="container">
+            <h1 class="title milky">求职意向</h1>
+            <div class="content">
+              <div class="wrap effect">
+                     <p class="txt">我不去想是否能够成功<br>既然选择了远方<br>便只顾风雨兼程 </p>
+                  </div>
+                  <div class="caret-wrapper">
+                    <div class="caret"></div>
+                  </div>
+                  <a href="javascript:;" class="button">前端开发工程师</a>
+                  <div class="wrap effect circle"></div>
+                  <div class="wrap effect circle1"></div>
+                  <div class="wrap effect circle2"></div>
+                  <div class="starPic">
+                    <p class="txt">任何事情都应该去尝试一下，因为你无法知道，什么样的事或者什么样的人将会改变你的一生。</p>
+                    <img src="images/stars.png" class="stars">
+                  </div>
+            </div>
+          </div>
+        </div>
+        <div class="section" id="section2">
+          <div class="sec-wrapper">
+            <h1 class="title milky">教育经历</h1>
+            <div class="content">
+              <div class="container">
+                <ul class="left-ul">
+                    <li>2010-09至2014-06</li>
+                    <li>就读于沈阳师范大学</li>
+                    <li>软件学院</li>
+                    <li>网络工程专业</li>
+                </ul>
+                <ul>
+                  <li>2014-09至2016-07</li>
+                  <li>就读于哈尔滨工业大学(保送)</li>
+                  <li>软件学院</li>
+                  <li>软件工程专业</li>
+                </ul>
+                <span class="line line_top"></span>
+                <span class="line line_right"></span>
+                <span class="line line_bottom"></span>
+                <span class="line line_left"></span>
+              </div>
+              <ul class="bg-bubbles">
+                <li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+              </ul>  
+            </div>
+          </div>
+        </div>
+        <div class="section" id="section3">
+            <div class="wrapper">
+              <div class="events_sec" id="events_sec">
+                <div class="content">
+                  <h1 class="title milky">项目经验</h1>
+                  <div class="events_list">
+                    <span class="ic_time png"></span>
+                    <ul>
+                      <li class="right_li">
+                        <span class="ic_events png"></span>
+                        <p class="txt_events"><strong>参与移动端邮箱功能的开发(嵌在app中)，负责邮箱前台所有功能的开发，前端使用<i>vue.js1.0</i>框架,结合后台的JAVA技术实现。</strong></p>
+                      </li>
+                      <li class="left_li">
+                        <span class="ic_events"><i class="png"></i></span>
+                        <p class="txt_events"><strong> 参与移动端工单系统的开发，负责工单系统前台的所有功能的开发，使用<i>vue.js1.0</i>框架,结合后台的PHP技术实现。</strong></p>
+                      </li>
+                      <li class="right_li">
+                        <span class="ic_events png"></span>
+                        <p class="txt_events"><strong>参与移动端工作流中的请假审批模块的开发，负责请假审批模块前台的所有功能的开发，使用<i>jquery</i>加<i>handlebars库</i>库，结合后台的JAVA技术实现。</strong></p>
+                      </li>
+                      <li class="left_li">
+                        <span class="ic_events"><i class="png last-icon"></i></span>
+                        <p class="txt_events"><strong>参与云杉大学在线学习平台的开发(pc端)，负责学习平台前台功能的开发，使用<i>bootstrap</i>框架,<i>jquery</i>库,结合后台的JAVA技术实现。</strong></p>
+                      </li>
+                    </ul>
+                    <span class="ic_arr png"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+        <div class="section" id="section4">
+          <h1 class="title milky">荣誉证书</h1>
+          <div class="content">
+            <div class="carousel">
+              <div id="container" id="sec4">
+                <div id="list">
+                  <img src="images/h1.jpg">
+                  <img src="images/h2.jpg">
+                  <img src="images/h3.jpg">
+                  <img src="images/h4.jpg">
+                  <img src="images/h5.jpg">
+                  <img src="images/h6.jpg">
+                </div>
+                <div id="buttons">
+                  <span index="0" class="on"></span>
+                  <span index="1"></span>
+                  <span index="2"></span>
+                  <span index="3"></span>
+                  <span index="4"></span>
+                  <span index="5"></span>
+                </div>
+              </div>
+              <div id="prev" class="lf-arrow"></div>
+              <div id="next" class="rg-arrow"></div>
+            </div>
+          </div>
+        </div>
+        <div class="section" id="section5">
+          <h1 class="title milky">专业技能</h1>
+          <div class="progress content">
+            <div class="contain">
+              <div class="col">
+                <ul class="skill">
+                  <li>
+                    <span class="expand vue"></span>
+                    <em>Vue</em>
+                  </li>
+                  <li>
+                    <span class="expand html5"></span>
+                    <em>HTML 5</em>
+                  </li>
+                  <li>
+                    <span class="expand css3"></span>
+                    <em>CSS 3</em>
+                  </li>
+                  <li>
+                    <span class="expand js"></span>
+                    <em>JavaScript</em>
+                  </li>
+                  <li>
+                    <span class="expand jquery"></span>
+                    <em>jQuery</em>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="js/handlebars-v3.0.0.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
   </body>
 </html>
