@@ -315,50 +315,68 @@
 
 window.onload = function() {
   genNet('section3');
-  var prefix = 'images/h';
-  var data1 = {
-    infoArr : [
-      {
-        'ask': '性别',
-        'res': '女'
-      },
-      {
-        'ask': '民族',
-        'res': '汉族'
-      },
-      {
-        'ask': '籍贯',
-        'res': '辽宁省铁岭市'
-      },
-      {
-        'ask': '邮箱',
-        'res': '15998234256@163.com'
-      },
-      {
-        'ask': '电话',
-        'res': '18500084023'
-      }
-    ]
-  };
-  Handlebars.registerHelper('list', function(items, options) {
-    var out = "<ul class='menu unstyled'>";
-
-    for(var i=0, l=items.length; i<l; i++) {
-      out = out + "<li><a href='javascript:;'>" + options.fn(items[i]) + "</a></li> " ;       
+  var prefix = 'images/h',resArr = [],imgResArr = [];
+  var infoArr = [
+    {
+      'ask': '性别',
+      'res': '女'
+    },
+    {
+      'ask': '民族',
+      'res': '汉族'
+    },
+    {
+      'ask': '籍贯',
+      'res': '辽宁省铁岭市'
+    },
+    {
+      'ask': '邮箱',
+      'res': '15998234256@163.com'
+    },
+    {
+      'ask': '电话',
+      'res': '18500084023'
+    }
+  ];
+  var imgArr = [
+    {
+      url: prefix + '1.jpg'
+    },
+    {
+      url: prefix + '2.jpg'
+    },
+    {
+      url: prefix + '3.jpg'
+    },
+    {
+      url: prefix + '4.jpg'
+    },
+    {
+      url: prefix + '5.jpg'
+    },
+    {
+      url: prefix + '6.jpg'
+    }
+  ];
+  for(var i=0, l=infoArr.length; i<l; i++) {
+    resArr.push("<li><a href='javascript:;'>" + infoArr[i].ask + ' ' + infoArr[i].res + "</a></li> ");       
+  }  
+  resArr.push("<div class='ribbon_wrap'><div class='ribbon_rail'><div></div></div></div>");
+  $('#sec .menu').html(resArr.join(''));
+  imgResArr.push("<div id='list'>");
+  for(var j=0, len=imgArr.length; j<len; j++) {
+    imgResArr.push("<img src='" + imgArr[j].url + "'>");    
+  }  
+  imgResArr.push("</div><div id='buttons'>");
+  for(var j=0, len=imgArr.length; j<len; j++) {
+    if(j == 0) {
+      imgResArr.push("<span index='" + j + "'class='on'></span>");
+    } else {
+      imgResArr.push("<span index='" + j + "'></span>");
     }  
-
-    return out + " <div class='ribbon_wrap'><div class='ribbon_rail'><div></div></div></div></ul>";
-  });
-  getElement('entry-template','sec',data1);
-  function getElement(str1,str2,data) {
-    var source   = $("#" + str1).html();
-    var template = Handlebars.compile(source);
-    
-    var context = data;
-    var html  = template(context);
-    $('#' + str2).html(html);
   }
-  
+  imgResArr.push("</div>");
+  $('#sec4').html(imgResArr.join(''));
   //----轮播---
   var container = $('#sec4');
   var list = $('#list');
